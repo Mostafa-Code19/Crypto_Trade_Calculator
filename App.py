@@ -1,10 +1,10 @@
 class CryptoCalculator:
     def __init__(self):
         # self.profitPercent = 1.27 / 3.47 # BB Bot
-        self.profitPercent = .275
-        self.totalOrders = 3
-        self.invest = 9_000_000
-        self.leverage = 10
+        self.profitPercent = float(input('Profit Percent: '))
+        self.totalOrders = int(input('Total Orders: '))
+        self.invest = int(input('Invest: '))
+        self.leverage = int(input('Leverage: '))
 
     def netProfitDaily(self):
         if self.leverage:
@@ -33,7 +33,7 @@ class CryptoCalculator:
         return "{:,}".format(int(number))
 
     def outPut(self):
-        print(f'Profit Daily: {self.formatIt(self.netProfitDaily())} Monthly: {self.formatIt(self.profitMonthly())} ')
+        print(f'Daily: {self.formatIt(self.netProfitDaily())}T Monthly: {self.formatIt(self.profitMonthly())}T ')
 
 
 CryptoCalculatorApp = CryptoCalculator()
